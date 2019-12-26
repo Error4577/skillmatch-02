@@ -3,8 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.5.1
-      environment:
-        BUNDLER_VERSION: 2.0.2
+        environment:
+          BUNDLER_VERSION: 2.0.2
     working_directory: ~/repo
     steps:
       - checkout
