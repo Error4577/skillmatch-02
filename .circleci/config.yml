@@ -3,17 +3,12 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.5.1
-        environment:
-          BUNDLER_VERSION: 2.1.2
     working_directory: ~/repo
     steps:
       - checkout
       - run:
           name: bundle update
-          command: |
-            sudo gem update --system
-            sudo gem uninstall -ax bundler
-            sudo gem install bundler:2.1.2
+          command: gem install bundler:2.1.2
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
