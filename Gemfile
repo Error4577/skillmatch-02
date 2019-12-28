@@ -41,6 +41,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'rubocop', require: false
 end
 
 group :development do
@@ -55,7 +56,6 @@ group :development do
   gem 'bullet'
   gem 'hirb'
   gem 'hirb-unicode'
-  gem 'rubocop', require: false
 end
 
 group :test do
