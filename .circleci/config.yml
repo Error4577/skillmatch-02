@@ -26,9 +26,6 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      - run:
-          name: delete bootsnap cache
-          command: rm tmp/cache/bootsnap-load-path-cache
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
       - run:
