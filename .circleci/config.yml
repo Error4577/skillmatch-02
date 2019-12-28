@@ -11,8 +11,6 @@ jobs:
       - run:
           name: bundle update
           command: |
-            sudo gem update --system
-            sudo gem uninstall -ax bundler
             sudo gem install bundler:2.1.2
       - restore_cache:
           keys:
