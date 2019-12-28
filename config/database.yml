@@ -27,7 +27,7 @@ development:
 test:
   <<: *default
   database: skillmatch-02_test
-  host: <%= DB_HOST %>
+  host: <%= ENV['DB_HOST'] %>
   username: root
   socket: /tmp/mysql.sock
 
