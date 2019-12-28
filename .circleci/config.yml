@@ -5,8 +5,13 @@ jobs:
       - image: circleci/ruby:2.6.3-node-browsers
         environment:
           RAILS_ENV: test
+          DB_USERNAME: root
           DB_HOST: 127.0.0.1
           BUNDLER_VERSION: 2.1.2
+      - image: mysql:5.7
+        environment:
+          MYSQL_USER: root
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
     working_directory: ~/repo
     steps:
       - checkout
