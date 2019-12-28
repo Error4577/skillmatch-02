@@ -32,9 +32,11 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Rubocop
+          command: bundle exec rubocop
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run:
-          name: run tests
-          command: |
-            DISABLE_SPRING=true bundle exec rails test
+          name: RSpec
+          command: bundle exec rspec
