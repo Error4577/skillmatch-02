@@ -27,6 +27,9 @@ development:
 test:
   <<: *default
   database: skillmatch-02_test
+  host: <%= ENV['DB_HOST'] %>
+  username: root
+  socket: /tmp/mysql.sock
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
