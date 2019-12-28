@@ -16,6 +16,3 @@
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Style/SpaceInsideBrackets:
-  Exclude:
-    - 'config/environments/production.rb'
