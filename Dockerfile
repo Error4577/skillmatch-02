@@ -10,15 +10,6 @@ ENV RAILS_MASTER_KEY ${RAILS_MASTER_KEY}
 
 WORKDIR $APP_ROOT
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN \
-  apt-get update && \
-  apt-get install -y \
-  nodejs \
-  default-mysql-client \
-  --no-install-recommends && \
-  rm -rf /var/lib/apt/lists/*
-
 ADD Gemfile $APP_ROOT
 ADD Gemfile.lock $APP_ROOT
 
@@ -29,7 +20,7 @@ RUN \
 
 ADD . $APP_ROOT
 
-RUN if [ "${RAILS_ENV}" = "production" ]; then bundle exec rails assets:precompile; else export RAILS_ENV=development; fi
+RUN if [ "${RAILS_ENV}" = "production"]; then bundle exec rails assets:precompile; else export RAILS_ENV=development; fi
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
