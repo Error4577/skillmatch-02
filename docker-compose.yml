@@ -16,7 +16,7 @@ services:
     volumes:
       - db-volume:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: 
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     ports:
       - 3306:3306
 volumes:
