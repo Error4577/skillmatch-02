@@ -20,6 +20,7 @@ development:
   database: skillmatch-02_development
   username: root
   host: db
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -28,6 +29,7 @@ test:
   <<: *default
   database: skillmatch-02_test
   host: <%= ENV['DB_HOST'] %>
+  socket: /tmp/mysql.sock
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
